@@ -103,7 +103,7 @@ div span {
   cursor: pointer;
   background-color: #0e2c60;
   color: white;
-  width: 90%;}
+  width: 50vh;}
 
 .odd {
   flex-direction: row;
@@ -275,4 +275,6 @@ footer {
     grid-template-rows: 100px auto 100px;
     grid-template-areas: "logo header "
  "navigation main"
- "footer footer"; } }
+ "footer footer"; }
+  .match {
+    width: 25vh};  }
