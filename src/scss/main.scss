@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis');
+
+
+* {
+  box-sizing: border-box;
+  font-family: 'Dosis', sans-serif;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 20% 55% 25%;
+  grid-template-rows: 100px auto 100px;
+  grid-template-areas: "logo header header"
+                        "navigation main calculator"
+                        "footer footer footer";
+}
+
+logo {
+  color: white;
+  grid-area: logo;
+  background: #16489f;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+header {
+  color: white;
+  grid-area: header;
+  background-color: #16489f;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+header span {
+  cursor: pointer;
+}
+
+header button {
+  background-color: orange;
+  color: #16489f;
+  border-radius: 10px;
+  font-size: 16px;
+  padding: 5px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+header input{
+  font-size: 16px;
+
+}
+
+
+section {
+  grid-area: navigation;
+  background-color: #09172f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main {
+  grid-area: main;
+  background-color: #09172f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main .slider{
+  background-color: #0DFFDE;
+  height: 25vh;
+  width: 85%;
+  margin-top: 20px;
+}
+
+main .slider li{
+
+}
+
+div span {
+  margin-right: 15px;
+}
+
+.country {
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 15px;
+  cursor: pointer;
+  width: 100%;
+  background-color: #16489f;
+  color: white
+}
+
+.league {
+  flex-direction: column;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 15px;
+  background-color: #0e2c60;
+  color: white;
+}
+
+
+.match {
+  text-align: center;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 15px;
+  cursor: pointer;
+  background-color: #0e2c60;
+  color: white;
+  width: 90%;
+}
+
+.odd {
+  flex-direction: row;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 15px;
+  background-color: #0e2c60;
+  color: white;
+}
+
+.clickedOdd {
+  background-color: orange;
+}
+
+calculator {
+  grid-area: calculator;
+  background-color: #09172f;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  color: #16489f;
+
+}
+
+calculator #ticketbar {
+  background-color: orange;
+  color: #16489f;
+  font-weight: bold;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+calculator #totalodd {
+  background-color: orange;
+  color: #16489f;
+  font-weight: bold;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+calculator #mainticket {
+  background-color: #16489f;
+  color: white;
+  font-size: 20px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+calculator #mainticket div {
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 15px;
+  background-color: #0e2c60;
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+calculator #mainticket div p:last-child {
+  cursor: pointer;
+}
+
+calculator #stake {
+  background-color: orange;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  color: white;
+  grid-area: footer;
+  background-color:  #09172f;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+
+
+/* The snackhbar - position it at the bottom and in the middle of the screen */
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #16489f;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+@media (max-width: 1400px) {
+  calculator #ticketbar {
+    display: none;
+  }
+  calculator #mainticket {
+    display: none;
+  }
+  calculator #totalodd{
+    display: none;
+  }
+  body {
+    grid-template-columns: 40% 55% 5%;
+    grid-template-rows: 100px auto 100px;
+    grid-template-areas: "logo header header"
+    "navigation main main"
+    "footer footer footer";
+  }
+}
+
+@media (max-width: 1050px) {
+  main .slider {
+    display: none;
+  }
+  header #register {
+    display: none;
+  }
+  body {
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 100px auto 100px;
+    grid-template-areas: "logo header "
+    "navigation main"
+    "footer footer";
+  }
+}
+
+
+
