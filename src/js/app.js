@@ -121,7 +121,6 @@ document.addEventListener("DOMContentLoaded",function(){
                 })
         }
 
-
     };
 
     const insertMatches = (matches, id) => {
@@ -362,8 +361,13 @@ document.addEventListener("DOMContentLoaded",function(){
         deleteOdd.addEventListener('click', () => {
             addOddToCalculator.parentElement.removeChild(addOddToCalculator);
             const removeClass = main.querySelector((`[id='${addOddToCalculator.id}']`));
-            removeClass.classList.remove('clickedOdd');
-            calculateTotal();
+
+            if (typeof(removeClass) != 'undefined' && removeClass != null) {
+                removeClass.classList.remove('clickedOdd');
+                calculateTotal();
+            } else {
+                calculateTotal();
+            }
         });
 
     };
@@ -376,7 +380,6 @@ document.addEventListener("DOMContentLoaded",function(){
         const odds = document.querySelectorAll('#mainticket div');
 
         const arrayOdds = [1];
-
 
         odds.forEach(odd => {
             arrayOdds.push(odd.value);
@@ -393,10 +396,9 @@ document.addEventListener("DOMContentLoaded",function(){
         possibleWin.innerText = `MOŻLIWA WYGRANA: ${roundedResult * stake.value} zł`;
 
 
-        stake.addEventListener('change', function () {
+        stake.addEventListener('change', () => {
             possibleWin.innerText = `MOŻLIWA WYGRANA: ${roundedResult * stake.value} zł`;
         });
-
     };
 
 
