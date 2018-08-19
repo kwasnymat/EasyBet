@@ -63,11 +63,8 @@ main {
   flex-direction: column;
   align-items: center; }
 
-main #slider {
-  background-image: url("../images/slider1.JPG");
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
+main .slider {
+  background-color: #0DFFDE;
   height: 25vh;
   width: 85%;
   margin-top: 20px; }
@@ -103,7 +100,7 @@ div span {
   cursor: pointer;
   background-color: #0e2c60;
   color: white;
-  width: 50vh;}
+  width: 50vh; }
 
 .odd {
   flex-direction: row;
@@ -178,15 +175,6 @@ calculator #stake {
   display: flex;
   justify-content: center;
   align-items: center; }
-
-calculator #bonus {
-  background-image: url("../images/bonu.JPG");
-  height: 100px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  margin-top: 10px;
-}
 
 footer {
   color: white;
@@ -266,7 +254,7 @@ footer {
  "footer footer footer"; } }
 
 @media (max-width: 1050px) {
-  main #slider {
+  main .slider {
     display: none; }
   header #register {
     display: none; }
@@ -277,4 +265,4 @@ footer {
  "navigation main"
  "footer footer"; }
   .match {
-    width: 25vh};  }
+    width: 25vh;}  }
