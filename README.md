@@ -3,3 +3,4 @@ CodersLab Final Project. Easy website which use apifooball.com. User can choose 
 ## Technologies 
 ES6
 ### Demo:
+https://kwasnymat.github.io/EasyBet/
